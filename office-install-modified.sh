@@ -198,12 +198,20 @@ install_ltsc() {
 }
 
 download_icons() {
+    local script_dir="/home/tommy/Downloads/office-install.sh-main"
+    local icons_archive="$script_dir/msoffice_icons.7z"
     icon_path="/home/$USER/.wine-msoffice/icons"
-    download_path=/home/$USER/msoffice_script_icons.7z
+
+    # Modified: Use local icons file instead of downloading
+    if [ ! -f "$icons_archive" ]; then
+        echo "ERROR: Icons archive not found at $icons_archive"
+        echo "Please ensure msoffice_icons.7z is in the script directory."
+        exit 1
+    fi
+
+    echo "Using local Office icons from $icons_archive..."
     mkdir -p $icon_path
-    wget https://i.troplo.com/i/0070f8a89f52.7z -O $download_path
-    7z x -y $download_path -o"$icon_path"
-    rm $download_path
+    7z x -y "$icons_archive" -o"$icon_path"
 }
 
 register_ltsc_items() {
