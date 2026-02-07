@@ -1,3 +1,6 @@
+# Fork notes:
+Modified script to use up to date packages and work with locally downloaded wine and office files
+
 # office-install.sh
 Microsoft Office 365 &amp; 2021 LTSC installation script for Wine on Arch Linux.
 
