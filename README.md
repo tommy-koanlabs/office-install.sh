@@ -1,18 +1,28 @@
-# Fork notes:
-Modified script to use up to date packages and work with locally downloaded wine and office files
+# Office on Wine
 
-# office-install.sh
-Microsoft Office 365 &amp; 2021 LTSC installation script for Wine on Arch Linux.
+Microsoft Office LTSC on Linux via Wine 11. Targeting 64-bit native execution.
 
-Known issues:
-- Broken Microsoft login (good thing!)
-- Doesn't receive feature updates due to Windows 7 EoL.
-- OneNote, and Teams don't work.
-- Excel has a tendency to flicker when typing.
+## Status
 
-# Running
-```
-bash <(curl -s https://raw.githubusercontent.com/Troplo/office-install.sh/main/office-install.sh)
-```
+Migrating from a working 32-bit Office 2021 LTSC setup to 64-bit for better
+performance. See `CLAUDE.md` for the full implementation plan and current progress.
 
-If you can't type, wait a bit for the activation popup and restart the Office program.
+## Quick Start (Post Distro Hop)
+
+1. Install your distro's Wine package (should be WoW64 build)
+2. Run `scripts/download-office-64bit.bat` on a Windows PC to get Office files
+3. Transfer files to Linux and install via ODT `/configure`
+4. See `docs/wine-knowledge-base.md` for all the details
+
+## Documentation
+
+- **[CLAUDE.md](CLAUDE.md)** - Implementation plan and task tracking
+- **[docs/wine-knowledge-base.md](docs/wine-knowledge-base.md)** - Wine settings,
+  architecture differences, errors and fixes, performance tuning
+- **[docs/previous-32bit-setup.md](docs/previous-32bit-setup.md)** - Previous
+  working 32-bit configuration (archived)
+
+## Credits
+
+Based on [Troplo's office-install.sh](https://github.com/Troplo/office-install.sh).
+Original scripts preserved in `archive/`.

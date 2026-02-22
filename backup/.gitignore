@@ -1,0 +1,6 @@
+# Ignore ALL files in this directory - contains Microsoft binaries and
+# pre-built Office archives that must not be uploaded to any public repository.
+*
+# But keep this .gitignore and the README
+!.gitignore
+!README.md

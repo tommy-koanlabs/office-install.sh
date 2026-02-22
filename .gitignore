@@ -1,0 +1,17 @@
+# Wine/Office binary backups - DO NOT commit to public repositories
+backup/*.7z
+backup/*.zst
+backup/*.exe
+backup/ODT/setup.exe
+backup/ODT/Office/
+backup/ODT/odt-download.log
+
+# Transferred Office source files (from Windows ODT download)
+office-source/
+
+# Wine prefixes
+.wine*/
+
+# OS junk
+.DS_Store
+Thumbs.db
